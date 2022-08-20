@@ -10,6 +10,3 @@ def foo(): pass
 def say_hello(to):
     "Say hello to somebody"
     return f'Hello {to}!'
-
-# %% ../00_core.ipynb 5
-say_hello("Isaac")
