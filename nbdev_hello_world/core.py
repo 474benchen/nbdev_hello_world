@@ -11,7 +11,7 @@ def say_hello(to):
     "Say hello to somebody"
     return f'Hello {to}!'
 
-# %% ../00_core.ipynb 13
+# %% ../00_core.ipynb 12
 def generate_fake_dataframe(size, cols, col_names = None, intervals = None, seed = None):
     'generate long fake dataframe'
     
