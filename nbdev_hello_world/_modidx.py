@@ -33,5 +33,4 @@ d = { 'settings': { 'allowed_cell_metadata_keys': '',
                 'user': '474benchen',
                 'version': '0.0.1'},
   'syms': { 'nbdev_hello_world.core': { 'nbdev_hello_world.core.foo': 'https://474benchen.github.io/core.html#foo',
-                                        'nbdev_hello_world.core.generate_fake_dataframe': 'https://474benchen.github.io/core.html#generate_fake_dataframe',
                                         'nbdev_hello_world.core.say_hello': 'https://474benchen.github.io/core.html#say_hello'}}}
