@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.168">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="testing new nbdev release on macbook m1 architecture">
+
+<title>nbdev_hello_world - nbdev2 macbook test</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="nbdev_hello_world - nbdev2 macbook test">
+<meta property="og:description" content="testing new nbdev release on macbook m1 architecture">
+<meta property="og:site-name" content="nbdev_hello_world">
+<meta name="twitter:title" content="nbdev_hello_world - nbdev2 macbook test">
+<meta name="twitter:description" content="testing new nbdev release on macbook m1 architecture">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">nbdev_hello_world</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/474benchen/nbdev_hello_world"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-reader-toggle nav-link" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">nbdev2 macbook test</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">nbdev_hello_world</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./core.html" class="sidebar-item-text sidebar-link active">nbdev2 macbook test</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#foo" id="toc-foo" class="nav-link active" data-scroll-target="#foo">foo</a></li>
+  <li><a href="#say_hello" id="toc-say_hello" class="nav-link" data-scroll-target="#say_hello">say_hello</a></li>
+  <li><a href="#test-index" id="toc-test-index" class="nav-link" data-scroll-target="#test-index">test index</a></li>
+  <li><a href="#test-dataframe" id="toc-test-dataframe" class="nav-link" data-scroll-target="#test-dataframe">test dataframe</a>
+  <ul>
+  <li><a href="#generate_fake_dataframe" id="toc-generate_fake_dataframe" class="nav-link" data-scroll-target="#generate_fake_dataframe">generate_fake_dataframe</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/474benchen/nbdev_hello_world/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">nbdev2 macbook test</h1>
+</div>
+
+<div>
+  <div class="description">
+    testing new nbdev release on macbook m1 architecture
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<!-- WARNING: THIS FILE WAS AUTOGENERATED! DO NOT EDIT! -->
+<hr>
+<p><a href="https://github.com/474benchen/nbdev_hello_world/blob/master/nbdev_hello_world/core.py#L7" target="_blank" style="float:right; font-size:smaller">source</a></p>
+<section id="foo" class="level3">
+<h3 class="anchored" data-anchor-id="foo">foo</h3>
+<blockquote class="blockquote">
+<pre><code> foo ()</code></pre>
+</blockquote>
+<hr>
+<p><a href="https://github.com/474benchen/nbdev_hello_world/blob/master/nbdev_hello_world/core.py#L10" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="say_hello" class="level3">
+<h3 class="anchored" data-anchor-id="say_hello">say_hello</h3>
+<blockquote class="blockquote">
+<pre><code> say_hello (to)</code></pre>
+</blockquote>
+<p>Say hello to somebody</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>say_hello(<span class="st">"water"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>'Hello water!'</code></pre>
+</div>
+</div>
+</section>
+<section id="test-index" class="level2">
+<h2 class="anchored" data-anchor-id="test-index">test index</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display,SVG</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>display(SVG(<span class="st">'&lt;svg height="100" xmlns="http://www.w3.org/2000/svg"&gt;&lt;circle cx="50" cy="50" r="40"/&gt;&lt;/svg&gt;'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="00_core_files/figure-html/cell-6-output-1.svg" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> say_hello(<span class="st">"Hamel"</span>)<span class="op">==</span><span class="st">"Hello Hamel!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>say_hello(<span class="st">"Isaac"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>'Hello Isaac!'</code></pre>
+</div>
+</div>
+</section>
+<section id="test-dataframe" class="level2">
+<h2 class="anchored" data-anchor-id="test-dataframe">test dataframe</h2>
+<hr>
+<p><a href="https://github.com/474benchen/nbdev_hello_world/blob/master/nbdev_hello_world/core.py#L15" target="_blank" style="float:right; font-size:smaller">source</a></p>
+<section id="generate_fake_dataframe" class="level3">
+<h3 class="anchored" data-anchor-id="generate_fake_dataframe">generate_fake_dataframe</h3>
+<blockquote class="blockquote">
+<pre><code> generate_fake_dataframe (size, cols, col_names=None, intervals=None,
+                          seed=None)</code></pre>
+</blockquote>
+<p>generate long fake dataframe</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>generate_fake_dataframe(size <span class="op">=</span> <span class="dv">1000</span>, cols <span class="op">=</span>  <span class="st">"cififficcdccc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>column_0_cat</th>
+      <th>column_1_int</th>
+      <th>column_2_float</th>
+      <th>column_3_int</th>
+      <th>column_4_float</th>
+      <th>column_5_float</th>
+      <th>column_6_int</th>
+      <th>column_7_cat</th>
+      <th>column_8_cat</th>
+      <th>column_9_date</th>
+      <th>column_10_cat</th>
+      <th>column_11_cat</th>
+      <th>column_12_cat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>James</td>
+      <td>2</td>
+      <td>49.180629</td>
+      <td>1</td>
+      <td>41.221218</td>
+      <td>13.141266</td>
+      <td>2</td>
+      <td>fish</td>
+      <td>Oslo</td>
+      <td>2020-01-08</td>
+      <td>green</td>
+      <td>William</td>
+      <td>horse</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Susan</td>
+      <td>2</td>
+      <td>94.577511</td>
+      <td>9</td>
+      <td>55.045529</td>
+      <td>51.459215</td>
+      <td>7</td>
+      <td>fish</td>
+      <td>Manila</td>
+      <td>2020-11-06</td>
+      <td>red</td>
+      <td>Salomon</td>
+      <td>turkey</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Ahmed</td>
+      <td>7</td>
+      <td>46.700215</td>
+      <td>4</td>
+      <td>84.922886</td>
+      <td>28.260568</td>
+      <td>7</td>
+      <td>cow</td>
+      <td>Oslo</td>
+      <td>2020-04-28</td>
+      <td>gold</td>
+      <td>Salomon</td>
+      <td>crab</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Linda</td>
+      <td>1</td>
+      <td>29.974935</td>
+      <td>6</td>
+      <td>58.771464</td>
+      <td>38.361072</td>
+      <td>9</td>
+      <td>chicken</td>
+      <td>Manila</td>
+      <td>2020-06-24</td>
+      <td>black</td>
+      <td>Salomon</td>
+      <td>shrimp</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Ahmed</td>
+      <td>8</td>
+      <td>80.857359</td>
+      <td>7</td>
+      <td>15.142514</td>
+      <td>18.848372</td>
+      <td>4</td>
+      <td>bee</td>
+      <td>Oslo</td>
+      <td>2020-08-03</td>
+      <td>gold</td>
+      <td>Juan Luis</td>
+      <td>duck</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>995</th>
+      <td>Ahmed</td>
+      <td>3</td>
+      <td>45.300811</td>
+      <td>5</td>
+      <td>42.243294</td>
+      <td>19.058283</td>
+      <td>0</td>
+      <td>sheep</td>
+      <td>Tokyo</td>
+      <td>2020-05-01</td>
+      <td>orange</td>
+      <td>Ahmed</td>
+      <td>horse</td>
+    </tr>
+    <tr>
+      <th>996</th>
+      <td>Richard</td>
+      <td>8</td>
+      <td>52.090458</td>
+      <td>6</td>
+      <td>37.010233</td>
+      <td>1.701587</td>
+      <td>5</td>
+      <td>chicken</td>
+      <td>Manila</td>
+      <td>2020-06-16</td>
+      <td>black</td>
+      <td>Salomon</td>
+      <td>turkey</td>
+    </tr>
+    <tr>
+      <th>997</th>
+      <td>Linda</td>
+      <td>6</td>
+      <td>3.699963</td>
+      <td>8</td>
+      <td>55.117789</td>
+      <td>14.171749</td>
+      <td>6</td>
+      <td>sheep</td>
+      <td>Tokyo</td>
+      <td>2020-08-25</td>
+      <td>black</td>
+      <td>Juan Luis</td>
+      <td>turkey</td>
+    </tr>
+    <tr>
+      <th>998</th>
+      <td>James</td>
+      <td>6</td>
+      <td>79.578999</td>
+      <td>5</td>
+      <td>49.703084</td>
+      <td>91.396806</td>
+      <td>1</td>
+      <td>cow</td>
+      <td>Oslo</td>
+      <td>2020-04-08</td>
+      <td>black</td>
+      <td>Juan Luis</td>
+      <td>horse</td>
+    </tr>
+    <tr>
+      <th>999</th>
+      <td>Richard</td>
+      <td>5</td>
+      <td>75.430997</td>
+      <td>0</td>
+      <td>6.474536</td>
+      <td>96.035119</td>
+      <td>6</td>
+      <td>fish</td>
+      <td>Manila</td>
+      <td>2020-07-05</td>
+      <td>red</td>
+      <td>Juan Luis</td>
+      <td>duck</td>
+    </tr>
+  </tbody>
+</table>
+<p>1000 rows × 13 columns</p>
+</div>
+</div>
+</div>
+<p>testing text with long dataframes</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>generate_fake_dataframe(size <span class="op">=</span> <span class="dv">1000</span>, cols <span class="op">=</span>  <span class="st">"cififficcdccdddcffic"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>column_0_cat</th>
+      <th>column_1_int</th>
+      <th>column_2_float</th>
+      <th>column_3_int</th>
+      <th>column_4_float</th>
+      <th>column_5_float</th>
+      <th>column_6_int</th>
+      <th>column_7_cat</th>
+      <th>column_8_cat</th>
+      <th>column_9_date</th>
+      <th>column_10_cat</th>
+      <th>column_11_cat</th>
+      <th>column_12_date</th>
+      <th>column_13_date</th>
+      <th>column_14_date</th>
+      <th>column_15_cat</th>
+      <th>column_16_float</th>
+      <th>column_17_float</th>
+      <th>column_18_int</th>
+      <th>column_19_cat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Patricia</td>
+      <td>5</td>
+      <td>71.287576</td>
+      <td>2</td>
+      <td>43.791860</td>
+      <td>66.053963</td>
+      <td>4</td>
+      <td>deer</td>
+      <td>Marseille</td>
+      <td>2020-11-02</td>
+      <td>black</td>
+      <td>Ahmed</td>
+      <td>2020-08-06</td>
+      <td>2020-06-24</td>
+      <td>2020-11-06</td>
+      <td>dove</td>
+      <td>65.481460</td>
+      <td>73.803679</td>
+      <td>2</td>
+      <td>Moscow</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>James</td>
+      <td>1</td>
+      <td>53.389880</td>
+      <td>2</td>
+      <td>80.906387</td>
+      <td>72.633890</td>
+      <td>8</td>
+      <td>deer</td>
+      <td>Stockholm</td>
+      <td>2020-08-15</td>
+      <td>beige</td>
+      <td>Ahmed</td>
+      <td>2020-03-23</td>
+      <td>2020-08-20</td>
+      <td>2020-07-24</td>
+      <td>chicken</td>
+      <td>64.944509</td>
+      <td>84.707341</td>
+      <td>1</td>
+      <td>Marseille</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Robert</td>
+      <td>4</td>
+      <td>55.655633</td>
+      <td>8</td>
+      <td>23.978734</td>
+      <td>18.826920</td>
+      <td>4</td>
+      <td>deer</td>
+      <td>Marseille</td>
+      <td>2020-08-02</td>
+      <td>black</td>
+      <td>Elizabeth</td>
+      <td>2020-03-02</td>
+      <td>2020-01-12</td>
+      <td>2020-08-04</td>
+      <td>fish</td>
+      <td>29.852144</td>
+      <td>32.600231</td>
+      <td>3</td>
+      <td>Nairobi</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>James</td>
+      <td>4</td>
+      <td>92.402865</td>
+      <td>2</td>
+      <td>33.285253</td>
+      <td>28.483397</td>
+      <td>5</td>
+      <td>chicken</td>
+      <td>Lisbon</td>
+      <td>2020-03-12</td>
+      <td>grey</td>
+      <td>Ahmed</td>
+      <td>2020-12-22</td>
+      <td>2020-07-18</td>
+      <td>2020-02-07</td>
+      <td>duck</td>
+      <td>5.775534</td>
+      <td>52.767824</td>
+      <td>9</td>
+      <td>Berlin</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Michael</td>
+      <td>7</td>
+      <td>48.545945</td>
+      <td>9</td>
+      <td>29.923468</td>
+      <td>15.213294</td>
+      <td>9</td>
+      <td>pig</td>
+      <td>Lisbon</td>
+      <td>2020-10-28</td>
+      <td>grey</td>
+      <td>Ahmed</td>
+      <td>2020-10-16</td>
+      <td>2020-06-23</td>
+      <td>2020-04-14</td>
+      <td>duck</td>
+      <td>83.494097</td>
+      <td>87.474135</td>
+      <td>3</td>
+      <td>Nairobi</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>995</th>
+      <td>Linda</td>
+      <td>5</td>
+      <td>64.392372</td>
+      <td>9</td>
+      <td>33.577655</td>
+      <td>3.427995</td>
+      <td>1</td>
+      <td>deer</td>
+      <td>Marseille</td>
+      <td>2020-11-02</td>
+      <td>grey</td>
+      <td>Mary</td>
+      <td>2020-08-23</td>
+      <td>2020-02-26</td>
+      <td>2020-01-20</td>
+      <td>chicken</td>
+      <td>34.408916</td>
+      <td>75.184466</td>
+      <td>3</td>
+      <td>Nairobi</td>
+    </tr>
+    <tr>
+      <th>996</th>
+      <td>Robert</td>
+      <td>6</td>
+      <td>9.959154</td>
+      <td>6</td>
+      <td>47.079062</td>
+      <td>20.435373</td>
+      <td>1</td>
+      <td>pig</td>
+      <td>Moscow</td>
+      <td>2020-10-26</td>
+      <td>silver</td>
+      <td>Elizabeth</td>
+      <td>2020-05-06</td>
+      <td>2020-04-14</td>
+      <td>2020-11-19</td>
+      <td>fish</td>
+      <td>45.659632</td>
+      <td>59.862740</td>
+      <td>2</td>
+      <td>Nairobi</td>
+    </tr>
+    <tr>
+      <th>997</th>
+      <td>Michael</td>
+      <td>1</td>
+      <td>78.685073</td>
+      <td>3</td>
+      <td>15.511427</td>
+      <td>2.675611</td>
+      <td>9</td>
+      <td>horse</td>
+      <td>Marseille</td>
+      <td>2020-12-01</td>
+      <td>green</td>
+      <td>Ahmed</td>
+      <td>2020-05-31</td>
+      <td>2020-11-24</td>
+      <td>2020-03-02</td>
+      <td>duck</td>
+      <td>24.819190</td>
+      <td>8.772953</td>
+      <td>3</td>
+      <td>Berlin</td>
+    </tr>
+    <tr>
+      <th>998</th>
+      <td>Patricia</td>
+      <td>4</td>
+      <td>89.041575</td>
+      <td>8</td>
+      <td>83.149318</td>
+      <td>56.953842</td>
+      <td>3</td>
+      <td>deer</td>
+      <td>Stockholm</td>
+      <td>2020-11-09</td>
+      <td>black</td>
+      <td>Ahmed</td>
+      <td>2020-01-17</td>
+      <td>2020-10-03</td>
+      <td>2020-01-15</td>
+      <td>dove</td>
+      <td>93.305249</td>
+      <td>5.824849</td>
+      <td>5</td>
+      <td>Berlin</td>
+    </tr>
+    <tr>
+      <th>999</th>
+      <td>Patricia</td>
+      <td>2</td>
+      <td>28.471446</td>
+      <td>0</td>
+      <td>31.752449</td>
+      <td>57.288104</td>
+      <td>8</td>
+      <td>deer</td>
+      <td>Marseille</td>
+      <td>2020-03-01</td>
+      <td>silver</td>
+      <td>Ahmed</td>
+      <td>2020-10-19</td>
+      <td>2020-07-27</td>
+      <td>2020-07-17</td>
+      <td>dove</td>
+      <td>15.376387</td>
+      <td>70.549411</td>
+      <td>6</td>
+      <td>Berlin</td>
+    </tr>
+  </tbody>
+</table>
+<p>1000 rows × 20 columns</p>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

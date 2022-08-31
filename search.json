@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "nbdev_hello_world",
+    "section": "",
+    "text": "brief exploration into the viability and benefits of nbdev2."
+  },
+  {
+    "objectID": "index.html#install",
+    "href": "index.html#install",
+    "title": "nbdev_hello_world",
+    "section": "Install",
+    "text": "Install\npip install nbdev_hello_world"
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "nbdev_hello_world",
+    "section": "How to use",
+    "text": "How to use\nmake sure code displays normally.\n\n1+1\n\n2\n\n\n\nsay_hello(\"temp\")\n\n'Hello temp!'\n\n\n\nsay_hello(\"please work\")\n\n'Hello please work!'"
+  },
+  {
+    "objectID": "core.html",
+    "href": "core.html",
+    "title": "nbdev2 macbook test",
+    "section": "",
+    "text": "source"
+  },
+  {
+    "objectID": "core.html#test-index",
+    "href": "core.html#test-index",
+    "title": "nbdev2 macbook test",
+    "section": "test index",
+    "text": "test index\n\nfrom IPython.display import display,SVG\n\n\ndisplay(SVG('<svg height=\"100\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"50\" cy=\"50\" r=\"40\"/></svg>'))\n\n\n\n\n\nassert say_hello(\"Hamel\")==\"Hello Hamel!\"\n\n\nsay_hello(\"Isaac\")\n\n'Hello Isaac!'"
+  },
+  {
+    "objectID": "core.html#test-dataframe",
+    "href": "core.html#test-dataframe",
+    "title": "nbdev2 macbook test",
+    "section": "test dataframe",
+    "text": "test dataframe\n\nsource\n\ngenerate_fake_dataframe\n\n generate_fake_dataframe (size, cols, col_names=None, intervals=None,\n                          seed=None)\n\ngenerate long fake dataframe\n\ngenerate_fake_dataframe(size = 1000, cols =  \"cififficcdccc\")\n\n\n\n\n\n  \n    \n      \n      column_0_cat\n      column_1_int\n      column_2_float\n      column_3_int\n      column_4_float\n      column_5_float\n      column_6_int\n      column_7_cat\n      column_8_cat\n      column_9_date\n      column_10_cat\n      column_11_cat\n      column_12_cat\n    \n  \n  \n    \n      0\n      James\n      2\n      49.180629\n      1\n      41.221218\n      13.141266\n      2\n      fish\n      Oslo\n      2020-01-08\n      green\n      William\n      horse\n    \n    \n      1\n      Susan\n      2\n      94.577511\n      9\n      55.045529\n      51.459215\n      7\n      fish\n      Manila\n      2020-11-06\n      red\n      Salomon\n      turkey\n    \n    \n      2\n      Ahmed\n      7\n      46.700215\n      4\n      84.922886\n      28.260568\n      7\n      cow\n      Oslo\n      2020-04-28\n      gold\n      Salomon\n      crab\n    \n    \n      3\n      Linda\n      1\n      29.974935\n      6\n      58.771464\n      38.361072\n      9\n      chicken\n      Manila\n      2020-06-24\n      black\n      Salomon\n      shrimp\n    \n    \n      4\n      Ahmed\n      8\n      80.857359\n      7\n      15.142514\n      18.848372\n      4\n      bee\n      Oslo\n      2020-08-03\n      gold\n      Juan Luis\n      duck\n    \n    \n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n    \n    \n      995\n      Ahmed\n      3\n      45.300811\n      5\n      42.243294\n      19.058283\n      0\n      sheep\n      Tokyo\n      2020-05-01\n      orange\n      Ahmed\n      horse\n    \n    \n      996\n      Richard\n      8\n      52.090458\n      6\n      37.010233\n      1.701587\n      5\n      chicken\n      Manila\n      2020-06-16\n      black\n      Salomon\n      turkey\n    \n    \n      997\n      Linda\n      6\n      3.699963\n      8\n      55.117789\n      14.171749\n      6\n      sheep\n      Tokyo\n      2020-08-25\n      black\n      Juan Luis\n      turkey\n    \n    \n      998\n      James\n      6\n      79.578999\n      5\n      49.703084\n      91.396806\n      1\n      cow\n      Oslo\n      2020-04-08\n      black\n      Juan Luis\n      horse\n    \n    \n      999\n      Richard\n      5\n      75.430997\n      0\n      6.474536\n      96.035119\n      6\n      fish\n      Manila\n      2020-07-05\n      red\n      Juan Luis\n      duck\n    \n  \n\n1000 rows × 13 columns\n\n\n\ntesting text with long dataframes\n\ngenerate_fake_dataframe(size = 1000, cols =  \"cififficcdccdddcffic\")\n\n\n\n\n\n  \n    \n      \n      column_0_cat\n      column_1_int\n      column_2_float\n      column_3_int\n      column_4_float\n      column_5_float\n      column_6_int\n      column_7_cat\n      column_8_cat\n      column_9_date\n      column_10_cat\n      column_11_cat\n      column_12_date\n      column_13_date\n      column_14_date\n      column_15_cat\n      column_16_float\n      column_17_float\n      column_18_int\n      column_19_cat\n    \n  \n  \n    \n      0\n      Patricia\n      5\n      71.287576\n      2\n      43.791860\n      66.053963\n      4\n      deer\n      Marseille\n      2020-11-02\n      black\n      Ahmed\n      2020-08-06\n      2020-06-24\n      2020-11-06\n      dove\n      65.481460\n      73.803679\n      2\n      Moscow\n    \n    \n      1\n      James\n      1\n      53.389880\n      2\n      80.906387\n      72.633890\n      8\n      deer\n      Stockholm\n      2020-08-15\n      beige\n      Ahmed\n      2020-03-23\n      2020-08-20\n      2020-07-24\n      chicken\n      64.944509\n      84.707341\n      1\n      Marseille\n    \n    \n      2\n      Robert\n      4\n      55.655633\n      8\n      23.978734\n      18.826920\n      4\n      deer\n      Marseille\n      2020-08-02\n      black\n      Elizabeth\n      2020-03-02\n      2020-01-12\n      2020-08-04\n      fish\n      29.852144\n      32.600231\n      3\n      Nairobi\n    \n    \n      3\n      James\n      4\n      92.402865\n      2\n      33.285253\n      28.483397\n      5\n      chicken\n      Lisbon\n      2020-03-12\n      grey\n      Ahmed\n      2020-12-22\n      2020-07-18\n      2020-02-07\n      duck\n      5.775534\n      52.767824\n      9\n      Berlin\n    \n    \n      4\n      Michael\n      7\n      48.545945\n      9\n      29.923468\n      15.213294\n      9\n      pig\n      Lisbon\n      2020-10-28\n      grey\n      Ahmed\n      2020-10-16\n      2020-06-23\n      2020-04-14\n      duck\n      83.494097\n      87.474135\n      3\n      Nairobi\n    \n    \n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n    \n    \n      995\n      Linda\n      5\n      64.392372\n      9\n      33.577655\n      3.427995\n      1\n      deer\n      Marseille\n      2020-11-02\n      grey\n      Mary\n      2020-08-23\n      2020-02-26\n      2020-01-20\n      chicken\n      34.408916\n      75.184466\n      3\n      Nairobi\n    \n    \n      996\n      Robert\n      6\n      9.959154\n      6\n      47.079062\n      20.435373\n      1\n      pig\n      Moscow\n      2020-10-26\n      silver\n      Elizabeth\n      2020-05-06\n      2020-04-14\n      2020-11-19\n      fish\n      45.659632\n      59.862740\n      2\n      Nairobi\n    \n    \n      997\n      Michael\n      1\n      78.685073\n      3\n      15.511427\n      2.675611\n      9\n      horse\n      Marseille\n      2020-12-01\n      green\n      Ahmed\n      2020-05-31\n      2020-11-24\n      2020-03-02\n      duck\n      24.819190\n      8.772953\n      3\n      Berlin\n    \n    \n      998\n      Patricia\n      4\n      89.041575\n      8\n      83.149318\n      56.953842\n      3\n      deer\n      Stockholm\n      2020-11-09\n      black\n      Ahmed\n      2020-01-17\n      2020-10-03\n      2020-01-15\n      dove\n      93.305249\n      5.824849\n      5\n      Berlin\n    \n    \n      999\n      Patricia\n      2\n      28.471446\n      0\n      31.752449\n      57.288104\n      8\n      deer\n      Marseille\n      2020-03-01\n      silver\n      Ahmed\n      2020-10-19\n      2020-07-27\n      2020-07-17\n      dove\n      15.376387\n      70.549411\n      6\n      Berlin\n    \n  \n\n1000 rows × 20 columns"
+  }
+]
